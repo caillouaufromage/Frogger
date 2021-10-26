@@ -29,8 +29,8 @@ public class Main {
 		IFrog frog = new Frog(game);
 		game.setFrog(frog);
 		graphic.setFrog(frog);
-		//Cr�ation et liaison de l'environnement
-		IEnvironment env = new GivenEnvironment(game);
+		//Création et liaison de l’environnement
+		IEnvironment env = new Environment(game);
 		game.setEnvironment(env);
 				
 		//Boucle principale : l'environnement s'acturalise tous les tempo milisecondes
