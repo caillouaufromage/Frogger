@@ -2,8 +2,10 @@ package environnement.src.environment;
 
 import java.util.ArrayList;
 
-import gameCommons.Case;
+/* import gameCommons.Case; */
+import util.Case;
 import gameCommons.Game;
+import environnement.src.environment.Environment;
 
 public class Lane {
 	private Game game;
@@ -12,33 +14,70 @@ public class Lane {
 	private ArrayList<Car> cars = new ArrayList<>();
 	private boolean leftToRight;
 	private double density;
+	int chrono;
 
-	// TODO : Constructeur(s)
+	/** Constructeur(s) **/
+
+	public Lane(Game game, int ord, int speed, ArrayList<Car> cars, boolean leftToRight, double density) {
+		this.game = game;
+		this.ord = ord;
+		this.speed = speed;
+		this.cars = cars;
+		this.leftToRight = leftToRight;
+		this.density = density;
+		this.chrono = 0;
+	}
 
 	public void update() {
 
-		// TODO
-
-		// Toutes les voitures se d�placent d'une case au bout d'un nombre "tic
-		// d'horloge" �gal � leur vitesse
-		// Notez que cette m�thode est appel�e � chaque tic d'horloge
+		// Toutes les voitures se déplacent d'une case au bout d'un nombre "tic
+		// d'horloge" égal à leur vitesse
+		// Notez que cette méthode est appelée à chaque tic d'horloge
 
 		// Les voitures doivent etre ajoutes a l interface graphique meme quand
 		// elle ne bougent pas
 
-		// A chaque tic d'horloge, une voiture peut �tre ajout�e
-
+		// A chaque tic d'horloge, une voiture peut être ajoutée
+		chrono =+ 1;
+		if(chrono == this.speed) { // dès que le chrono atteint la vitesse de la Voie, les Voitures avancent de 'this.speed' Cases
+			this.deplace();
+			//this.supprime();
+			mayAddCar();
+			chrono = 0;
+		}
 	}
 
-	// TODO : ajout de methodes
+	/** Méthodes **/
 
+	public void deplace(){ //déplace toutes les Voitures de la Lane de this.speed cases
+		for(Car c: this.cars)
+			c.deplace(this.speed);
+	}
+/*
+	public void supprime() { //supprime toutes les voitures de la Lane qui sont hors jeu
+		for (Car c : this.cars){
+			if (c.estHorsJeu()) {
+				c.supprime();
+			}
+		}
+	}
+
+ */
+
+	public boolean isSafe(Case c) {
+		for (Car car : this.cars)
+			if (car.estSurCase(c)) {
+				return false;
+			}
+		return true;
+	}
 	/*
 	 * Fourni : mayAddCar(), getFirstCase() et getBeforeFirstCase() 
 	 */
 
 	/**
-	 * Ajoute une voiture au d�but de la voie avec probabilit� �gale � la
-	 * densit�, si la premi�re case de la voie est vide
+	 * Ajoute une voiture au début de la voie avec probabilité égale à la
+	 * densité, si la première case de la voie est vide
 	 */
 	private void mayAddCar() {
 		if (isSafe(getFirstCase()) && isSafe(getBeforeFirstCase())) {
