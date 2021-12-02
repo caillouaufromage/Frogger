@@ -1,11 +1,10 @@
 package environnement.src.environment;
 
-import java.util.ArrayList;
-
-/* import gameCommons.Case; */
 import gameCommons.Game;
 import gameCommons.IEnvironment;
 import util.Case;
+
+import java.util.ArrayList;
 
 public class Environment implements IEnvironment {
     Game game;
@@ -20,7 +19,7 @@ public class Environment implements IEnvironment {
     /** Méthodes **/
 
     @Override
-    public boolean isSafe(Case c) {  // renvoie true si la case c de l'environnement est sûre
+    public boolean isSafe(Case c) {  // renvoie true si la case c de l'environnement est sûr
         for(Lane l : voies){
             if(l.isSafe(c) == false){
                 return false;

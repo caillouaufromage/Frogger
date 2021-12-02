@@ -1,11 +1,9 @@
 package environnement.src.environment;
 
-import java.util.ArrayList;
-
-/* import gameCommons.Case; */
-import util.Case;
 import gameCommons.Game;
-import environnement.src.environment.Environment;
+import util.Case;
+
+import java.util.ArrayList;
 
 public class Lane {
 	private Game game;
@@ -38,10 +36,11 @@ public class Lane {
 		// elle ne bougent pas
 
 		// A chaque tic d'horloge, une voiture peut être ajoutée
+
 		chrono =+ 1;
 		if(chrono == this.speed) { // dès que le chrono atteint la vitesse de la Voie, les Voitures avancent de 'this.speed' Cases
 			this.deplace();
-			//this.supprime();
+			//this.supprimeL();
 			mayAddCar();
 			chrono = 0;
 		}
@@ -53,16 +52,16 @@ public class Lane {
 		for(Car c: this.cars)
 			c.deplace(this.speed);
 	}
-/*
-	public void supprime() { //supprime toutes les voitures de la Lane qui sont hors jeu
+
+	public void supprimeL() { //supprime toutes les voitures de la Lane qui sont hors jeu
 		for (Car c : this.cars){
 			if (c.estHorsJeu()) {
-				c.supprime();
+				c.supprimeC();
 			}
 		}
 	}
 
- */
+
 
 	public boolean isSafe(Case c) {
 		for (Car car : this.cars)

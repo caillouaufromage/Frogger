@@ -1,32 +1,30 @@
 package gameCommons;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.Timer;
-
+import environnement.src.environment.Environment;
 import frog.Frog;
-import givenEnvironment.GivenEnvironment;
 import graphicalElements.FroggerGraphic;
 import graphicalElements.IFroggerGraphics;
-import environnement.src.environment.Environment;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		//Caract�ristiques du jeu
+		//Caractéristiques du jeu
 		int width = 26;
 		int height = 20;
 		int tempo = 100;
 		int minSpeedInTimerLoops = 3;
-		double defaultDensity = 1;
+		double defaultDensity = 0.5;
 		
-		//Cr�ation de l'interface graphique
+		//Création de l'interface graphique
 		IFroggerGraphics graphic = new FroggerGraphic(width, height);
-		//Cr�ation de la partie
+		//Création de la partie
 		Game game = new Game(graphic, width, height, minSpeedInTimerLoops, defaultDensity);
-		//Cr�ation et liason de la grenouille
+		//Création et liason de la grenouille
 		IFrog frog = new Frog(game);
 		game.setFrog(frog);
 		graphic.setFrog(frog);
