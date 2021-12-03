@@ -1,19 +1,17 @@
 package environmentInf;
 
-import gameCommons.Main;
-import util.Case;
 import gameCommons.Game;
+import gameCommons.IEnvironment;
+import util.Case;
+import util.GameMode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import gameCommons.IEnvironment;
-import util.GameMode;
-
 public class EnvironmentInf implements IEnvironment {
     //TODO
     private final Game game;
-    private List<Lane> lanes;
+    private final List<Lane> lanes;
 
     public EnvironmentInf(final Game game) {
         this.game = game;

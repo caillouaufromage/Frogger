@@ -39,5 +39,8 @@ public class Sprite {
         map.put("frogger" , ImageLoader.loadImage(path + "frogger.png"));
     }
 
+    public static BufferedImage getImage(String name){
+        return map.get(name);
+    }
 
 }

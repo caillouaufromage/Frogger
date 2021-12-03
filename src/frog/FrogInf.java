@@ -2,14 +2,13 @@ package frog;
 
 import gameCommons.Game;
 import gameCommons.IFrog;
-import gameCommons.Main;
 import util.Case;
 import util.Direction;
 
 public class FrogInf implements IFrog {
     private Case position;
     private Direction direction;
-    private Game game;
+    private final Game game;
 
     public FrogInf(Game game) {
         this.position = new Case(game.width / 2, 1);

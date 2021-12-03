@@ -5,7 +5,6 @@ import frog.Frog;
 import frog.FrogInf;
 import graphicalElements.FroggerGraphic;
 import graphicalElements.IFroggerGraphics;
-import graphicalElements.SoundLoader;
 import graphicalElements.Sprite;
 import util.GameMode;
 
@@ -24,11 +23,11 @@ public class Main {
 		int height = 20;
 		int tempo = 100;
 		int minSpeedInTimerLoops = 3;
-		double defaultDensity = 0.04;
+		double defaultDensity = 0.10;
 
 
 
-		GameMode mode = GameMode.Infini;
+		GameMode mode = GameMode.Classique;
 
 		//Cr�ation de l'interface graphique
 		IFroggerGraphics graphic = new FroggerGraphic(width, height);

@@ -7,10 +7,10 @@ import util.ElementEnum;
 import util.GameMode;
 
 public class CaseSpeciale extends Element {
-    private ElementEnum caseSpeciale;
+    private final ElementEnum caseSpeciale;
     private int length;
     protected Game game;
-    private int zorder;
+    private final int zorder;
 
     public CaseSpeciale(Game game, int absc, int ord, ElementEnum caseSpeciale) {
         super(absc, ord, caseSpeciale.getName());

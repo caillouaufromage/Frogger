@@ -7,7 +7,6 @@ import util.Case;
 import util.ElementEnum;
 import util.GameMode;
 
-import java.util.List;
 import java.util.Random;
 
 
@@ -26,13 +25,12 @@ public class Game {
 
 	public GameMode mode;
 
-	private double timer;
+	private final double timer;
 
 	// Lien aux objets utilis�s
 	private IEnvironment environment;
 	private IFrog frog;
 	private IFrog frog2;
-	private List<IFrog> frogs;
 	private final IFroggerGraphics graphic;
     private final ElementEnum frogProps = ElementEnum.FrogPlayer;
     private final String name = frogProps.getName();
@@ -62,10 +60,6 @@ public class Game {
 
 	}
 
-
-	public void addFrog(IFrog frog){
-		frogs.add(frog);
-	}
 	/**
 	 * Lie l'objet frog � la partie
 	 * 

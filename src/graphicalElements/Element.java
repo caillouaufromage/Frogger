@@ -16,11 +16,10 @@ public class Element extends Case{
 
     public Element(int absc, int ord, String name) {
         super(absc, ord);
-        image = Sprite.map.get(name);
+        image = Sprite.getImage(name);
     }
 
     public Element(Case c, String name) {
-        super(c.absc, c.ord);
-        image = Sprite.map.get(name);
+        this(c.absc, c.ord,name);
     }
 }
