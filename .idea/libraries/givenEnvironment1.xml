@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="givenEnvironment1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/FroggerPartie1/out/production/FroggerPartie1/givenEnvironment.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
