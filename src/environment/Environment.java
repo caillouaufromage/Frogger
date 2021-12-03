@@ -10,8 +10,8 @@ public class Environment implements IEnvironment {
 		
 	//TODO
 
-    private Game game;
-    private ArrayList<Lane> lanes;
+    private final Game game;
+    private final ArrayList<Lane> lanes;
 
     public Environment(Game game) {
         lanes = new ArrayList<>();
@@ -44,7 +44,25 @@ public class Environment implements IEnvironment {
     }
 
     @Override
-    public void addLane() {
+    public void addLane() {}
 
+    @Override
+    public boolean canMove(Case c) {
+        return true;
+    }
+
+    @Override
+    public boolean slide(Case c) {
+        return false;
+    }
+
+    @Override
+    public boolean isAddBonus(Case c) {
+        return false;
+    }
+
+    @Override
+    public boolean[] isRondin(Case c) {
+        return new boolean[]{false};
     }
 }

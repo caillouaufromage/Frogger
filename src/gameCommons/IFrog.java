@@ -10,6 +10,9 @@ public interface IFrog {
 	 * @return la case où se trouve la grenouille
 	 */
 	Case getPosition();
+
+	void setPosition(Case curPosition);
+	public boolean isInBounds();
 	
 	/**
 	 * Donne la direction de la grenouille, c'est � dire de son dernier mouvement 

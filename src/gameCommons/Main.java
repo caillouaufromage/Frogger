@@ -2,16 +2,18 @@ package gameCommons;
 
 import environment.Environment;
 import environmentInf.EnvironmentInf;
+import frog.Frog;
 import frogInf.FrogInf;
 import graphicalElements.FroggerGraphic;
 import graphicalElements.IFroggerGraphics;
+import util.Case;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main {
 
+	public static Timer timer;
+	public static boolean multiplayer = false;
 	public static void main(String[] args) {
 
 		//Caract�ristiques du jeu
@@ -19,36 +21,45 @@ public class Main {
 		int height = 20;
 		int tempo = 100;
 		int minSpeedInTimerLoops = 3;
-		double defaultDensity = 0.02;
-		
+		double defaultDensity = 0.04;
+		int mode = 1;
+
 		//Cr�ation de l'interface graphique
 		IFroggerGraphics graphic = new FroggerGraphic(width, height);
 		//Cr�ation de la partie
 		Game game = new Game(graphic, width, height, minSpeedInTimerLoops, defaultDensity);
+		IFrog frog =  new FrogInf(game);
+		IFrog frog2 =  new FrogInf(game);
+		IEnvironment env =  new EnvironmentInf(game);
+		switch (mode){
+			case 0:
+				frog = new Frog(game);
+				frog2 =  new Frog(game);
+				env = new Environment(game);
+				break;
+			case 1:
+				frog = new FrogInf(game);
+				frog2 =  new FrogInf(game);
+				env = new EnvironmentInf(game);
+				break;
+		}
 		//Cr�ation et liason de la grenouille
-		/*IFrog frog = new Frog(game);
-		game.setFrog(frog);
-		graphic.setFrog(frog);*/
-
-		IFrog frogInf = new FrogInf(game);
-		game.setFrog(frogInf);
-		graphic.setFrog(frogInf);
+		game.setFrog(frog,frog2);
+		graphic.setFrog(frog,frog2);
 		//Cr�ation et liaison de l'environnement
-		//IEnvironment env = new Environment(game);
-		IEnvironment envInf = new EnvironmentInf(game);
-		game.setEnvironment(envInf);
+		game.setEnvironment(env);
+
+		//premiers cars
 		for (int i = 0; i < 40; ++i) {
 			game.update();
 		}
 		//Boucle principale : l'environnement s'acturalise tous les tempo milisecondes
-		Timer timer = new Timer(tempo, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				game.update();
-				graphic.repaint();
-			}
+		timer = new Timer(tempo, e -> {
+			game.update();
+			graphic.repaint();
 		});
 		timer.setInitialDelay(0);
 		timer.start();
+
 	}
 }

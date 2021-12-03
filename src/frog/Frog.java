@@ -25,6 +25,16 @@ public class Frog implements IFrog {
 	}
 
 	@Override
+	public void setPosition(Case curPosition) {
+
+	}
+
+	@Override
+	public boolean isInBounds() {
+		return true;
+	}
+
+	@Override
 	public Direction getDirection() {
 		return this.curDirection;
 	}

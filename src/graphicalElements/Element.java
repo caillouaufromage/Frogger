@@ -5,7 +5,7 @@ import util.Case;
 import java.awt.*;
 
 
-public class Element extends Case {
+public class Element extends Case{
     public final Color color;
 
     public Element(int absc, int ord, Color color) {
@@ -17,5 +17,4 @@ public class Element extends Case {
         super(c.absc, c.ord);
         this.color = color;
     }
-    
 }

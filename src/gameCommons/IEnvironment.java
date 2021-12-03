@@ -28,4 +28,12 @@ public interface IEnvironment {
 	void update();
 
 	void addLane();
+
+	boolean canMove(Case c);
+
+	boolean slide(Case c);
+
+	boolean isAddBonus(Case c);
+
+	boolean[] isRondin(Case c);
 }

@@ -10,4 +10,11 @@ public class Case {
 		this.ord = ord;
 	}
 
+	@Override
+	public String toString() {
+		return "Case{" +
+				"absc=" + absc +
+				", ord=" + ord +
+				'}';
+	}
 }

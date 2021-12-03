@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5c059a1b-2ea7-4c93-a899-feb5912fb28d" name="Changes" comment="partie 3">
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Bonus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/CaseSpeciale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/CaseSpecialeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Slide.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Trap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frogger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frogger.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment/Environment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environmentInf/CarInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/CarInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environmentInf/EnvironmentInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/EnvironmentInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environmentInf/LaneInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/LaneInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frog/Frog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frog/Frog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frogInf/FrogInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frogInf/FrogInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameCommons/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameCommons/IEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/IEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameCommons/IFrog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/IFrog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameCommons/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphicalElements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphicalElements/FroggerGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/FroggerGraphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphicalElements/IFroggerGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/IFroggerGraphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Case.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="partie4" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="21mQRM8WeBjMvxXgWoUMgcWEfO6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Projet Java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Projet Java" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c059a1b-2ea7-4c93-a899-feb5912fb28d" name="Changes" comment="" />
+      <created>1638543774069</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638543774069</updated>
+      <workItem from="1638543775661" duration="113000" />
+      <workItem from="1638543897011" duration="1005000" />
+    </task>
+    <task id="LOCAL-00001" summary="partie 3">
+      <created>1638544178503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638544178503</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="partie 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="partie 3" />
+  </component>
+</project>
