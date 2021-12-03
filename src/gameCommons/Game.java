@@ -1,17 +1,18 @@
 package gameCommons;
 
-import frog.Frog;
 import graphicalElements.Element;
 import graphicalElements.IFroggerGraphics;
+import graphicalElements.SoundLoader;
 import util.Case;
+import util.ElementEnum;
+import util.GameMode;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 
 public class Game {
+
 
 	public final Random randomGen = new Random();
 
@@ -23,6 +24,8 @@ public class Game {
 	public int score;
 	public int scoreMax;
 
+	public GameMode mode;
+
 	private double timer;
 
 	// Lien aux objets utilis�s
@@ -31,7 +34,9 @@ public class Game {
 	private IFrog frog2;
 	private List<IFrog> frogs;
 	private final IFroggerGraphics graphic;
-
+    private final ElementEnum frogProps = ElementEnum.FrogPlayer;
+    private final String name = frogProps.getName();
+    private final int depth = frogProps.getZorder();
 	/**
 	 * 
 	 * @param graphic
@@ -45,7 +50,7 @@ public class Game {
 	 * @param defaultDensity
 	 *            densite de voiture utilisee par defaut pour les routes
 	 */
-	public Game(IFroggerGraphics graphic, int width, int height, int minSpeedInTimerLoop, double defaultDensity) {
+	public Game(IFroggerGraphics graphic, int width, int height, int minSpeedInTimerLoop, double defaultDensity, GameMode mode) {
 		super();
 		this.graphic = graphic;
 		this.width = width;
@@ -53,6 +58,8 @@ public class Game {
 		this.minSpeedInTimerLoops = minSpeedInTimerLoop;
 		this.defaultDensity = defaultDensity;
 		this.timer = System.currentTimeMillis();
+		this.mode = mode;
+
 	}
 
 
@@ -89,12 +96,14 @@ public class Game {
 	}
 
 	private double getTimer(){
-		return  ((System.currentTimeMillis() - this.timer)/1000)%60;
+		return  ((System.currentTimeMillis() - this.timer)/1000);
 	}
 
 	public IFrog getFrog() {
 		return frog;
 	}
+
+	public IFrog getFrog2(){ return frog2;}
 
 
 
@@ -116,11 +125,18 @@ public class Game {
 	 */
 	public boolean testLose() {
 		if (!this.environment.isSafe(this.frog.getPosition()) || !frog.isInBounds()){
-			String str = String.format("<html>You Lose, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
+			String str = String.format("<html>Player 1 Lose, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
+			this.graphic.endGameScreen(str);
+			Main.timer.stop();
+			SoundLoader.sound("../resources/sfx/gameover.wav");
+			return true;
+		}
+		/*if (!this.environment.isSafe(this.frog2.getPosition()) || !frog2.isInBounds()){
+			String str = String.format("<html>Player 2 Lose, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
 			this.graphic.endGameScreen(str);
 			Main.timer.stop();
 			return true;
-		}
+		}*/
 		return false;
 	}
 
@@ -132,11 +148,17 @@ public class Game {
 	 */
 	public boolean testWin() {
 		if (this.environment.isWinningPosition(this.frog.getPosition())) {
-			String str = String.format("<html>You Win, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
+			String str = String.format("<html>Player 1 Win, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
 			this.graphic.endGameScreen(str);
 			Main.timer.stop();
 			return true;
 		}
+		/*if (this.environment.isWinningPosition(this.frog2.getPosition())) {
+			String str = String.format("<html>Player 2 Win, your score: %d <br/> Time : %.2f <html>", this.scoreMax, getTimer());
+			this.graphic.endGameScreen(str);
+			Main.timer.stop();
+			return true;
+		}*/
 		return false;
 	}
 
@@ -147,11 +169,13 @@ public class Game {
 	public void update() {
 		graphic.clear();
 		environment.update();
-		//this.graphic.add(new Element(frog.getPosition(), Color.GREEN));
-		this.graphic.add(new Element(frog.getPosition().absc,1, Color.GREEN),3);
-        if (Main.multiplayer)
-		    for (IFrog f : frogs)
-				this.graphic.add(new Element(f.getPosition().absc, 1, Color.GREEN),3);
+		if (mode == GameMode.Classique)
+			this.graphic.add(new Element(frog.getPosition(), name),this.depth);
+		else{
+			this.graphic.add(new Element(frog.getPosition().absc, 1, name), this.depth);
+			if (Main.multiplayer)
+				this.graphic.add(new Element(frog2.getPosition().absc, 1, name), this.depth);
+		}
 		testLose();
 		testWin();
 	}

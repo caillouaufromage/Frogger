@@ -12,7 +12,7 @@ public interface IFrog {
 	Case getPosition();
 
 	void setPosition(Case curPosition);
-	public boolean isInBounds();
+	boolean isInBounds();
 	
 	/**
 	 * Donne la direction de la grenouille, c'est � dire de son dernier mouvement 

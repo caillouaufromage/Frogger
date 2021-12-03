@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c059a1b-2ea7-4c93-a899-feb5912fb28d" name="Changes" comment="partie 3">
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Bonus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/CaseSpeciale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/CaseSpecialeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Slide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Trap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Wall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caseSpeciale/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frogger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/frogger.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environmentInf/CarInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/CarInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environmentInf/EnvironmentInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/EnvironmentInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environmentInf/LaneInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/environmentInf/LaneInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frog/Frog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frog/Frog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frogInf/FrogInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frogInf/FrogInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameCommons/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameCommons/IEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/IEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameCommons/IFrog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/IFrog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameCommons/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameCommons/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphicalElements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphicalElements/FroggerGraphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/FroggerGraphic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphicalElements/IFroggerGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphicalElements/IFroggerGraphics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Case.java" afterDir="false" />
+    <list default="true" id="5c059a1b-2ea7-4c93-a899-feb5912fb28d" name="Changes" comment="partie 4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +59,8 @@
       <updated>1638543774069</updated>
       <workItem from="1638543775661" duration="113000" />
       <workItem from="1638543897011" duration="1005000" />
+      <workItem from="1638545009141" duration="405000" />
+      <workItem from="1638545424434" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="partie 3">
       <created>1638544178503</created>
@@ -89,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638544178503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="partie 4">
+      <created>1638545045921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638545045921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +96,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="partie 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="partie 3" />
+    <MESSAGE value="partie 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="partie 4" />
   </component>
 </project>

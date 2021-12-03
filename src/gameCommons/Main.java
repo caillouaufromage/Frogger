@@ -1,12 +1,13 @@
 package gameCommons;
 
-import environment.Environment;
 import environmentInf.EnvironmentInf;
 import frog.Frog;
-import frogInf.FrogInf;
+import frog.FrogInf;
 import graphicalElements.FroggerGraphic;
 import graphicalElements.IFroggerGraphics;
-import util.Case;
+import graphicalElements.SoundLoader;
+import graphicalElements.Sprite;
+import util.GameMode;
 
 import javax.swing.*;
 
@@ -14,6 +15,8 @@ public class Main {
 
 	public static Timer timer;
 	public static boolean multiplayer = false;
+
+
 	public static void main(String[] args) {
 
 		//Caract�ristiques du jeu
@@ -22,30 +25,40 @@ public class Main {
 		int tempo = 100;
 		int minSpeedInTimerLoops = 3;
 		double defaultDensity = 0.04;
-		int mode = 1;
+
+
+
+		GameMode mode = GameMode.Infini;
 
 		//Cr�ation de l'interface graphique
 		IFroggerGraphics graphic = new FroggerGraphic(width, height);
 		//Cr�ation de la partie
-		Game game = new Game(graphic, width, height, minSpeedInTimerLoops, defaultDensity);
+		Game game = new Game(graphic, width, height, minSpeedInTimerLoops, defaultDensity, mode);
 		IFrog frog =  new FrogInf(game);
 		IFrog frog2 =  new FrogInf(game);
-		IEnvironment env =  new EnvironmentInf(game);
+
 		switch (mode){
-			case 0:
+			case Classique:
 				frog = new Frog(game);
-				frog2 =  new Frog(game);
-				env = new Environment(game);
 				break;
-			case 1:
+			case Infini:
+				frog = new FrogInf(game);
+				break;
+			case InfiniMultiplayer:
 				frog = new FrogInf(game);
 				frog2 =  new FrogInf(game);
-				env = new EnvironmentInf(game);
+				break;
+			case ClassiqueMultiplayer:
+				frog = new Frog(game);
+				frog2 =  new Frog(game);
 				break;
 		}
+
+		Sprite.init();
 		//Cr�ation et liason de la grenouille
 		game.setFrog(frog,frog2);
 		graphic.setFrog(frog,frog2);
+		IEnvironment env =  new EnvironmentInf(game);
 		//Cr�ation et liaison de l'environnement
 		game.setEnvironment(env);
 
@@ -61,5 +74,9 @@ public class Main {
 		timer.setInitialDelay(0);
 		timer.start();
 
+	}
+
+	public static void mainCaller(){
+		main(null);
 	}
 }

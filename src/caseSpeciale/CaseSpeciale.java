@@ -3,36 +3,37 @@ package caseSpeciale;
 import gameCommons.Game;
 import graphicalElements.Element;
 import util.Case;
+import util.ElementEnum;
+import util.GameMode;
 
 public class CaseSpeciale extends Element {
-    private CaseSpecialeEnum caseSpeciale;
+    private ElementEnum caseSpeciale;
     private int length;
     protected Game game;
+    private int zorder;
 
-    public CaseSpeciale(Game game, int absc, int ord, CaseSpecialeEnum caseSpeciale) {
-        super(absc, ord, caseSpeciale.getColor());
+    public CaseSpeciale(Game game, int absc, int ord, ElementEnum caseSpeciale) {
+        super(absc, ord, caseSpeciale.getName());
         this.caseSpeciale = caseSpeciale;
         this.game = game;
         this.setLengthAndMaxLength();
+        this.zorder = caseSpeciale.getZorder();
     }
 
 
     private void setLengthAndMaxLength() {
-        int maxLength = 0;
-        if (this instanceof Wall) {
-            maxLength = 4;
-            this.length = game.randomGen.nextInt(maxLength) + 1;
+        int maxLength;
+        switch (this.caseSpeciale){
+            case Wall:
+                maxLength = 4;
+                this.length = game.randomGen.nextInt(maxLength) + 1;
+                break;
+            default:
+                this.length = 1;
         }
-        if (this instanceof Slide) {
-            maxLength = 3;
-            this.length = game.randomGen.nextInt(maxLength) + 1;
-        }
-        if (this instanceof Water) {this.length = 1;}
-        if (this instanceof Bonus) {this.length = 1;}
-        if (this instanceof Trap) this.length = 1;
     }
 
-    public CaseSpecialeEnum getCaseSpeciale() {
+    public ElementEnum getCaseSpeciale() {
         return caseSpeciale;
     }
 
@@ -45,41 +46,7 @@ public class CaseSpeciale extends Element {
     }
 
     private void addToGraphics() {
-        if (this instanceof Wall) {
-            for (int i = 0; i < length; i++) {
-                game.getGraphic()
-                        .add(new Wall(game, absc + i, ord - game.score, CaseSpecialeEnum.Wall), 3);
-            }
-            return;
-        }
-        if (this instanceof Water) {
-            for (int i = 0; i < length; i++) {
-                game.getGraphic()
-                        .add(new Water(game, absc + i, ord - game.score, CaseSpecialeEnum.Water), 0);
-            }
-            return;
-        }
-        if (this instanceof Bonus) {
-            for (int i = 0; i < length; i++) {
-                game.getGraphic()
-                        .add(new Bonus(game, absc + i, ord - game.score, CaseSpecialeEnum.Bonus), 0);
-            }
-            return;
-        }
-        if (this instanceof Slide) {
-            for (int i = 0; i < length; i++) {
-                game.getGraphic()
-                        .add(new Slide(game, absc + i, ord - game.score, CaseSpecialeEnum.Slide), 0);
-            }
-            return;
-        }
-        if (this instanceof Trap) {
-            for (int i = 0; i < length; i++) {
-                game.getGraphic()
-                        .add(new Trap(game, absc + i, ord - game.score, CaseSpecialeEnum.Trap), 0);
-            }
-            return;
-        }
-
+        for (int i = 0; i < length; i++)
+            game.getGraphic().add(new CaseSpeciale(game, absc + i, ord - (game.mode == GameMode.Infini ? game.score : 0), this.caseSpeciale), zorder);
     }
 }

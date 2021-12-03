@@ -1,7 +1,9 @@
 package environment;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import environmentInf.Lane;
 import util.Case;
 import gameCommons.Game;
 import gameCommons.IEnvironment;
@@ -11,7 +13,7 @@ public class Environment implements IEnvironment {
 	//TODO
 
     private final Game game;
-    private final ArrayList<Lane> lanes;
+    private final List<Lane> lanes;
 
     public Environment(Game game) {
         lanes = new ArrayList<>();
